@@ -75,8 +75,8 @@ int main() {
 
 
 
-    // Buffer'ları oluştur (sadece 2 üçgen için)
-    GLuint vbos[3]; // 0: Kırmızı, 1: Mavi 
+    // Buffer'ları oluştur (sadece 3 üçgen için)
+    GLuint vbos[3]; // 0: Kırmızı, 1: Mavi, 2: Yeşil
     glGenBuffers(3, vbos);
 
     // Kırmızı üçgenin verisini VBO'ya yükle
@@ -96,10 +96,10 @@ int main() {
     glEnableVertexAttribArray(posLoc);
         
 
-    glClearDepthf(0.5f);            // Derinlik temizleme değeri 1 olarak ayarlanır
+    glClearDepthf(0.5f);            // Derinlik temizleme değeri 0.5 olarak ayarlanır
 
     glEnable(GL_DEPTH_TEST);        // Depth test ayarları
-    glDepthFunc(GL_EQUAL);          // Doğru derinlik testi için GL_NEVER ayarlanır
+    glDepthFunc(GL_EQUAL);          // Derinlik testi istenilen parametre olarak ayarlanır
     
     GLenum error ;
     while ((error = glGetError()) != GL_NO_ERROR) {
